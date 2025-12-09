@@ -1,0 +1,182 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #000;
+}
+
+/* dark overlay */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  pointer-events: none;
+  z-index: -1;
+}
+
+.app-shell {
+  max-width: 1100px;
+  max-height: 650px;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.16);
+  border-radius: 26px;
+  backdrop-filter: blur(18px);
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
+  overflow-y: auto;
+}
+
+.left-pane {
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.9),
+    rgba(255, 255, 255, 0.75)
+  );
+  border-right: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.right-pane {
+  background: rgba(245, 247, 252, 0.96);
+}
+
+.search-input {
+  border-radius: 999px 0 0 999px;
+  border-right: 0;
+}
+
+.search-btn {
+  border-radius: 0 999px 999px 0;
+}
+
+.weather-icon-main {
+  max-height: 110px;
+}
+
+.temp-display {
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.temp-display span {
+  font-size: 1.2rem;
+}
+
+.small-label {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.tab-btn {
+  border: 0;
+  background: transparent;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding-bottom: 0.2rem;
+  position: relative;
+  color: #666;
+}
+
+.tab-btn.active {
+  color: #111;
+}
+
+.tab-btn.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.2rem;
+  height: 2px;
+  border-radius: 999px;
+  background: #3f7df3;
+}
+
+.unit-toggle {
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  padding: 4px;
+}
+
+.unit-toggle button {
+  border-radius: 999px;
+  border: 0;
+  padding: 3px 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  background: transparent;
+  color: #fff;
+  opacity: 0.5;
+}
+
+.unit-toggle button.active {
+  background: #fff;
+  color: #000;
+  opacity: 1;
+}
+
+.forecast-card {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 14px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+  padding: 0.5rem 0.6rem;
+  text-align: center;
+  font-size: 0.75rem;
+}
+
+.forecast-card img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.forecast-time {
+  font-weight: 500;
+  margin-bottom: 0.1rem;
+}
+
+.forecast-temp {
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+
+.highlight-card {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 18px;
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.18);
+  padding: 0.75rem 0.9rem;
+  font-size: 0.8rem;
+  height: 100%;
+}
+
+.highlight-title {
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-size: 0.7rem;
+  color: #666;
+  margin-bottom: 0.2rem;
+}
+
+.highlight-main {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.footer-text a {
+  text-decoration: none;
+  color: #3f7df3;
+  font-weight: 600;
+}
+
+@media (max-width: 991.98px) {
+  .left-pane {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+  }
+}
